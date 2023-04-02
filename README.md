@@ -85,7 +85,7 @@ __穷举__
 __枚举法__
 
 让机算机将所有还原顺序都尝试一遍从而找出最优解。下图为枚举的总量\(G＝绿，O＝橙，R＝红，B＝蓝）
-![Alt text]([https://github.com/weiman152/StarsView/blob/master/ScreenShots/1.png](https://github.com/Doujiamu/CrossSolver/blob/main/img/map.png))  
+![Alt text]([https://github.com/Doujiamu/CrossSolver/blob/main/img/map.png](https://github.com/Doujiamu/CrossSolver/blob/main/img/map.png))  
 
 共24种可选顺序，将这些顺序作为参数依次代入算法，记下每条路径的步数，找出最短的路径，输出。这样的话十字求解就可以完成，同时三层的深度可以捕获所有连带情况。
 
