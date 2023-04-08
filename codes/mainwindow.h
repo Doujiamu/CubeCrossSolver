@@ -1,10 +1,12 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#define UNITLENGTH 50
 
 #include <QMainWindow>
 #include <string>
+#include <QDebug>
+#include <QString>
+#include <QFont>
 
 namespace Ui {
 class MainWindow;
@@ -14,9 +16,19 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+    //menu - Menu
+    int UNITLENGTH = 50;
+    void setsize_small();
+    void setsize_middle();
+    void setsize_large();
+    void refresh();
+
     //disturb(.cpp)
+    QFont dis_font;
+    int lastCode = -1;
     int dist_alg[20];
-    std::string dist_alg_txt;
+    QString dist_alg_txt;
+//    void newDisturbClicked();
 
 
 public:
@@ -24,8 +36,11 @@ public:
     ~MainWindow();
 
     //disturb(.cpp)
-    int digitalSteps();
-    int singleStep();
+    void updateDisturb();  //main func of 'disturb'
+    void digitalSteps(); //digital step
+    int singleStep();   //make single step
+    void digitalToTxt();//turn digital to text
+    void testAlg();     //testing inside
 
     //DIYfuncs(.cpp)realize with c
     int randnum(int min,int max);
